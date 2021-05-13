@@ -1,5 +1,5 @@
 package model;
-class Snake{
+public class Snake{
 
     // snake has a start value which denotes it's head and end denotes its end value;
 

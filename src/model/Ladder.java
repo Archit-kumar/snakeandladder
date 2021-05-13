@@ -1,5 +1,6 @@
 package model;
-class Ladder{
+
+public class Ladder{
 
 
     // start denotes lower point of Ladder from where player will climb.

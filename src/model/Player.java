@@ -1,5 +1,6 @@
 package model;
-class Player{
+
+public class Player{
 
     private String name;
 
@@ -7,7 +8,7 @@ class Player{
 
     public Player(String name) {
         this.name = name;
-        this.turnNumber = turnNumber;
+      
     }
 
     public String getName() {

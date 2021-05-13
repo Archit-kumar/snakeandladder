@@ -1,9 +1,10 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Board{
+public class Board{
 
     private int size;
 
@@ -14,6 +15,19 @@ class Board{
     private HashMap<String, Integer> playesrLocation;
     
     
+
+	public Board(int size) {
+		
+		super();
+		this.size = size;
+		
+		this.snakes = new ArrayList<Snake>();
+		
+		this.ladders = new ArrayList<Ladder>();
+		
+		this.playesrLocation = new HashMap<>();
+		
+	}
 
 	public Board(int size, List<Snake> snakes, List<Ladder> ladders, HashMap<String, Integer> playesrLocation) {
 		super();
