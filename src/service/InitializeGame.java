@@ -96,7 +96,7 @@ public class InitializeGame {
 				
 				position = snake.get().getEnd(); 
 				
-				System.out.println("After biting by snake at "+snake.get().getStart()+" new position is - "+position);
+				System.out.println("After biting by snake at "+snake.get().getStart()+" new position is = "+position);
 			}
 			
 			if(ladder.isPresent()) {
@@ -104,7 +104,7 @@ public class InitializeGame {
 				
 				position = ladder.get().getEnd();
 				
-				System.out.println("After using ladder at "+ladder.get().getStart()+" new position is - "+position);
+				System.out.println("After using ladder at "+ladder.get().getStart()+" new position is = "+position);
 				
 			}
 			
