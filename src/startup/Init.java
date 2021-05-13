@@ -60,11 +60,11 @@ public class Init {
 		 
 		 game.setPlayer(player);
 		 
-		 game.setSnakeAndLadderBoard(null);
-		 
 		 game.getSnakeAndLadderBoard().setSnakes(snakes);
 		 
 		 game.getSnakeAndLadderBoard().setLadders(ladders);
+		 
+		 game.getSnakeAndLadderBoard().getPlayesrLocation().put(name, 0);
 		
 		 game.setDiceService(diceType==1 ? new NormalDiceService() : new CrookedDiceService());
 		 
