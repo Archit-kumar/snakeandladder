@@ -2,12 +2,13 @@ package service;
 
 import java.util.Random;
 
-public class CrookedDiceService {
+public class CrookedDiceService implements DiceService {
 	
 
-	static int[] evenNo = new int[] {2,4,6};
+	int[] evenNo = new int[] {2,4,6};
 	
-	public static int roll() {
+	@Override
+	public int roll() {
 		
 		return evenNo[ new Random().nextInt(3)];
 		
