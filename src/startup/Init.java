@@ -23,7 +23,17 @@ public class Init {
 		 
 		 while(nos-->0) {
 			 
-			 snakes.add(new Snake(scanner.nextInt(),scanner.nextInt()));
+			 int start = scanner.nextInt();
+			 
+			 int end = scanner.nextInt();
+			 
+			 if(start <= end || start <1 || start >100 || end < 1 || end >100 ) {
+				 
+				 System.out.println("Invalid start and end point of snake. Please enter again"); nos++; continue;
+				 
+			 }
+			 
+			 snakes.add(new Snake(start,end));
 		 }
 		 
 		 System.out.println("Please Enter Number of Ladders");
@@ -36,7 +46,27 @@ public class Init {
 		 
 		 while(nol-->0) {
 		 
-			 ladders.add(new Ladder(scanner.nextInt(),scanner.nextInt()));
+			 int start = scanner.nextInt();
+			 
+			 int end = scanner.nextInt();
+			 
+			if(start >= end || start <1 || start >100 || end < 1 || end >100) {
+				 
+				 System.out.println("Invalid start and end point of ladder. Please enter again"); nol++; continue;
+			 }
+			 
+			 else if(snakes.stream().filter(s -> s.getStart() == start).findAny().isPresent()) {
+				 
+				 System.out.println("Invalid start point of ladder. Snake and Ladder cannot start from same postion . Please enter again"); nol++; continue;
+				 
+			 }
+			 else if(snakes.stream().filter(s -> (s.getStart() == end && s.getEnd()==start)).findAny().isPresent()) {
+				 
+				 System.out.println("Invalid start point of ladder. loop is detected. please try enter again "); nol++; continue;
+				 
+			 }
+			 
+			 ladders.add(new Ladder(start,end));
 		 }
 		 
 		 

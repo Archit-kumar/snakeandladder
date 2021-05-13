@@ -9,13 +9,13 @@ public class InitializeGame {
 	
 	private Board snakeAndLadderBoard;
 	
-	private Boolean isGameCompleted;
+	private Boolean gameCompletedFlag;
 	
 	private Player player;
 	
 	private static final int DEFAULT_BOARD_SIZE = 100;
 	
-	private static final int DEFAULT_TURNS = 100;
+	private static final int DEFAULT_TURNS = 10;
 	
 	private DiceService diceService;
 
@@ -24,6 +24,30 @@ public class InitializeGame {
 		this.snakeAndLadderBoard = new Board(DEFAULT_BOARD_SIZE);
 		
 	}
+	
+	
+	
+
+	public Boolean getGameCompletedFlag() {
+		return gameCompletedFlag;
+	}
+
+
+
+
+	public void setGameCompletedFlag(Boolean gameCompletedFlag) {
+		this.gameCompletedFlag = gameCompletedFlag;
+	}
+
+
+
+
+	public static int getDefaultTurns() {
+		return DEFAULT_TURNS;
+	}
+
+
+
 
 	public Board getSnakeAndLadderBoard() {
 		return snakeAndLadderBoard;
@@ -33,13 +57,6 @@ public class InitializeGame {
 		this.snakeAndLadderBoard = snakeAndLadderBoard;
 	}
 
-	public Boolean getIsGameCompleted() {
-		return isGameCompleted;
-	}
-
-	public void setIsGameCompleted(Boolean isGameCompleted) {
-		this.isGameCompleted = isGameCompleted;
-	}
 
 	public Player getPlayer() {
 		return player;
@@ -115,7 +132,7 @@ public class InitializeGame {
 		
 		this.getPlayer().setTurnNumber(this.getPlayer().getTurnNumber()+1);
 		
-		System.out.println(" Player =  "+this.player.getName()+"  turn no = "+this.player.getTurnNumber()+" diceValue = "+diceVal+"  new position - "+newpos);
+		System.out.println(" Player =  "+this.player.getName()+"  turn no = "+this.player.getTurnNumber()+" rolled a "+diceVal+" and moved from "+pos+" to "+newpos);
 		
 		newpos = getNewPostionAfterUsingSnakesAndLadders(newpos);
 		
@@ -154,6 +171,8 @@ public class InitializeGame {
 			
 			startPos = this.snakeAndLadderBoard.getPlayesrLocation().get(this.player.getName());
 		}
+		
+		this.gameCompletedFlag = true;
 		
 		System.out.println("Game Over");
 	}
