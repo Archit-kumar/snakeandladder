@@ -1,4 +1,8 @@
-# snakeandladder
+# Snake and Ladder
+
+# Java version - 15
+
+# Junit 5
 
 #story1
 On a board (Of size 100), for a dice throw a player should
