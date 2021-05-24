@@ -122,6 +122,10 @@ class SnakeeAndLadderTestCase {
 	
 		 game.setPlayer(player);
 		 
+		 game.setGameCompletedFlag(false);
+		 
+		 player.setTurnNumber(0);
+		 
 		 game.getSnakeAndLadderBoard().setSnakes(new ArrayList<>());
 		 
 		 List<Ladder> ladders = new ArrayList<>();
@@ -144,6 +148,45 @@ class SnakeeAndLadderTestCase {
 		 assertEquals(true, game.getGameCompletedFlag());
 		 
 		 assertEquals(true, game.getPlayer().getTurnNumber()==1);
+	
+	}
+	
+	@Test
+	void Green_snake_testing() {
+	
+		 game.setPlayer(player);
+		 
+		 game.getSnakeAndLadderBoard().setSnakes(new ArrayList<>());
+		 
+		 game.getSnakeAndLadderBoard().getPlayesrLocation().put(player.getName(), 0);
+	
+		 game.setGameCompletedFlag(false);
+		 
+		 player.setTurnNumber(0);
+		 
+		 List<Ladder> ladders = new ArrayList<>();
+		 
+		 ladders.add(new Ladder(11,100));
+		 
+		 
+		 List<Snake> snakes = Arrays.asList(new Snake(14, 12,false),
+				 new Snake(10,5,true));
+		
+		 
+		 game.getSnakeAndLadderBoard().setLadders(ladders);
+		 
+		 game.getSnakeAndLadderBoard().setSnakes(snakes);
+		 
+		 game.getSnakeAndLadderBoard().getPlayesrLocation().put(player.getName(), 0);
+		 
+		 game.setDiceService(new NormalDiceService());
+		 
+		 game.startGame();
+		 
+		 assertEquals(snakes.get(1).isGreenSnake(), true," this is Green Snake");
+		 
+		 assertEquals(snakes.get(1).isUsed(), true," this is Green Snake");
+		
 	
 	}
 	
