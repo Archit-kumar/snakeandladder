@@ -19,7 +19,7 @@ public class Init {
 		 
 		 List<Snake> snakes = new ArrayList<Snake>();
 		 
-		 System.out.println("Enter "+nos+" lines each containing 2 numbers denoting the head and tail positions of the snake.");
+		 System.out.println("Enter "+nos+" lines each containing 3 numbers denoting the head and tail positions of the snake following by one integer denoting 1 for Green Snake and 2 for normal snake ");
 		 
 		 while(nos-->0) {
 			 
@@ -27,13 +27,15 @@ public class Init {
 			 
 			 int end = scanner.nextInt();
 			 
+			 int snakeType = scanner.nextInt();
+			 
 			 if(start <= end || start <1 || start >100 || end < 1 || end >100 ) {
 				 
 				 System.out.println("Invalid start and end point of snake. Please enter again"); nos++; continue;
 				 
 			 }
 			 
-			 snakes.add(new Snake(start,end));
+			 snakes.add(new Snake(start,end, (snakeType==1)?true:false ));
 		 }
 		 
 		 System.out.println("Please Enter Number of Ladders");

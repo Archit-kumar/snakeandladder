@@ -45,11 +45,11 @@ class SnakeeAndLadderTestCase {
 	void whenTestingForEquality_ShouldBeEqual() {
 	
 		 
-		 List<Snake> snakes = Arrays.asList(new Snake(22, 1),
-				 new Snake(25,2),
-				 new Snake(44,5),
-				 new Snake(33,5),
-				 new Snake(99,10));
+		 List<Snake> snakes = Arrays.asList(new Snake(22, 1,false),
+				 new Snake(25,2,false),
+				 new Snake(44,5,false),
+				 new Snake(33,5,false),
+				 new Snake(99,10,false));
 		 
 		 
 		 List<Ladder> ladders = Arrays.asList(new Ladder(22, 1),

@@ -92,11 +92,17 @@ public class InitializeGame {
 			
 			if(snake.isEmpty() && ladder.isEmpty()) return position;
 			
-			if(snake.isPresent()) {
+			if(snake.isPresent() && snake.get().isUsed()==false) {
 				
 				position = snake.get().getEnd(); 
 				
-				System.out.println("After biting by snake at "+snake.get().getStart()+" new position is = "+position);
+				if(snake.get().isGreenSnake()) {
+					
+					snake.get().setUsed(true);
+				}
+				
+				System.out.println("After biting by "+((snake.get().isGreenSnake()==true)?" Green ":"")+" snake at "+snake.get().getStart()+" new position is = "+position);
+				
 			}
 			
 			if(ladder.isPresent()) {

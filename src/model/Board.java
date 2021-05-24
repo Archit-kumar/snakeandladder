@@ -14,7 +14,6 @@ public class Board{
     
     private HashMap<String, Integer> playesrLocation;
     
-    
 
 	public Board(int size) {
 		

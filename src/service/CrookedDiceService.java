@@ -5,7 +5,7 @@ import java.util.Random;
 public class CrookedDiceService implements DiceService {
 	
 
-	int[] evenNo = new int[] {2,4,6};
+	int[] evenNo = new int[] {5,5,5};
 	
 	@Override
 	public int roll() {
